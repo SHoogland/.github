@@ -13,5 +13,6 @@ jobs:
     permissions:
       contents: write
       pull-requests: write
+      statuses: write
     steps:
       - uses: shoogland/.github/renovate-runner@main
