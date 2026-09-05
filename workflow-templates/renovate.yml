@@ -1,0 +1,12 @@
+name: Renovate
+on:
+  schedule:
+    - cron: '0 12 * * *'
+  workflow_dispatch:
+
+jobs:
+  renovate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    uses: shoogland/.github/.github/workflows/renovate.yml@main
+    secrets: inherit
