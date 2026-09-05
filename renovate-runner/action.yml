@@ -1,0 +1,9 @@
+name: 'Run Renovate'
+description: 'Runs Renovate against the current repo'
+runs:
+  using: 'composite'
+  steps:
+    - uses: actions/checkout@v4
+    - uses: renovatebot/github-action@v40
+      env:
+        RENOVATE_TOKEN: ${{ github.token }}
