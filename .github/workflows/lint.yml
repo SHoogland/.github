@@ -30,3 +30,5 @@ jobs:
         uses: super-linter/super-linter/slim@v8.7.0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          VALIDATE_GITHUB_ACTIONS: true
+          VALIDATE_JSON: true
