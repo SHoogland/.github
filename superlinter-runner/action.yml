@@ -21,7 +21,7 @@ runs:
       env:
         GITHUB_TOKEN: ${{ github.token }}
         LINTER_RULES_PATH: ${{ github.action_path }}
-        PRETTIER_COMMAND_OPTIONS: "--config ${{ github.action_path }}/.prettierrc"
+        PRETTIER_COMMAND_OPTIONS: "--config ${{ github.action_path }}/.prettierrc.json"
         VALIDATE_GITHUB_ACTIONS_ZIZMOR: false
         VALIDATE_BIOME_LINT: false
         VALIDATE_BIOME_FORMAT: false
