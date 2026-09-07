@@ -10,6 +10,7 @@ runs:
         persist-credentials: false
 
     - name: Prepare actionlint config
+      shell: bash
       run: |
         sudo mkdir -p /action/lib/.automation
         sudo cp ${{ github.action_path }}/actionlint.yaml /action/lib/.automation/actionlint.yaml
@@ -20,8 +21,7 @@ runs:
       env:
         GITHUB_TOKEN: ${{ github.token }}
         LINTER_RULES_PATH: ${{ github.action_path }}
-        PRETTIER_COMMAND_OPTIONS: "--config ${{ github.action_path }}/.prettierrc
+        PRETTIER_COMMAND_OPTIONS: "--config ${{ github.action_path }}/.prettierrc"
         VALIDATE_GITHUB_ACTIONS_ZIZMOR: false
         VALIDATE_BIOME_LINT: false
         VALIDATE_BIOME_FORMAT: false
-
