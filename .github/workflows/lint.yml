@@ -8,6 +8,8 @@ on:
   pull_request:
   workflow_call: 
 
+permissions: {}
+
 jobs:
   lint:
     runs-on: ubuntu-latest

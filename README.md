@@ -1,6 +1,8 @@
 # .github
 Action templates, and profile md
 
+Run super-linter locally:
+```
 docker run \
 -e LOG_LEVEL=DEBUG \
 -e RUN_LOCAL=true \
@@ -8,3 +10,4 @@ docker run \
 -v /workspaces/.github:/tmp/lint \
 --rm \
 ghcr.io/super-linter/super-linter:latest
+```
