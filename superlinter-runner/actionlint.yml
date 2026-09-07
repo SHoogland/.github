@@ -1,2 +1,5 @@
-   ignore:
-     - 'unknown permission scope "vulnerability-alerts"'
+
+paths:
+  .github/workflows/renovate.yml:
+    ignore:
+      - 'unknown permission scope "vulnerability-alerts"'
