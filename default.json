@@ -1,7 +1,39 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["config:recommended"],
+  "extends": [
+    "config:recommended"
+  ],
+  "prHourlyLimit": 10,
+  "assignees": [
+    "SHoogland"
+  ],
   "packageRules": [
-    { "matchManagers": ["github-actions"], "groupName": "GitHub Actions" }
+    {
+      "matchManagers": [
+        "github-actions"
+      ],
+      "groupName": "GitHub Actions"
+    },
+    {
+      "matchPackageNames": [
+        "renovatebot/github-action",
+        "curlimages/curl",
+        "k8s-monitoring"
+      ],
+      "matchUpdateTypes": [
+        "minor",
+        "patch"
+      ],
+      "matchCurrentVersion": "!/^0/",
+      "automerge": true
+    },
+    {
+      "matchDepTypes": ["devDependencies"],
+      "matchUpdateTypes": [
+        "minor",
+        "patch"
+      ],
+      "automerge": true
+    }
   ]
 }
