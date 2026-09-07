@@ -1,0 +1,22 @@
+---
+name: Lint
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+  workflow_call: 
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: read
+      packages: read
+      issues: write
+      pull-requests: write
+      statuses: write
+    steps:
+      - uses: shoogland/.github/superlinter-runner@main
