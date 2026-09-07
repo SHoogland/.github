@@ -6,29 +6,17 @@ on:
     branches:
       - main
   pull_request:
+  workflow_call: 
 
 jobs:
-  build:
-    name: Lint
+  lint:
     runs-on: ubuntu-latest
-
+    timeout-minutes: 15
     permissions:
       contents: read
       packages: read
       issues: write
       pull-requests: write
       statuses: write
-
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v7
-        with:
-          fetch-depth: 0
-          persist-credentials: false
-
-      - name: Super-linter
-        uses: super-linter/super-linter/slim@v8.7.0
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          VALIDATE_GITHUB_ACTIONS: true
-          VALIDATE_JSON: true
+      - uses: shoogland/.github/superlinter-runner@main
