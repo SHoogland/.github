@@ -1,10 +1,10 @@
 {
-  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "platform": "github",
-  "minimumReleaseAge": "3 days",
-  "onboarding": true,
-  "onboardingConfig": {
-    "extends": ["github>shoogland/.github"]
-  },
-  "onboardingConfigFileName": ".github/renovate.json"
+    "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+    "platform": "github",
+    "minimumReleaseAge": "3 days",
+    "onboarding": true,
+    "onboardingConfig": {
+        "extends": ["github>shoogland/.github"]
+    },
+    "onboardingConfigFileName": ".github/renovate.json"
 }
