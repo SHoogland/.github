@@ -1,7 +1,8 @@
-name: 'Run Renovate'
-description: 'Runs Renovate against the current repo'
+---
+name: "Run Renovate"
+description: "Runs Renovate against the current repo"
 runs:
-  using: 'composite'
+  using: "composite"
   steps:
     - uses: actions/checkout@v7
     - name: Self-hosted Renovate
@@ -9,7 +10,6 @@ runs:
       env:
         RENOVATE_TOKEN: ${{ github.token }}
         RENOVATE_REPOSITORIES: ${{ github.repository }}
-        LOG_LEVEL: debug
         NODE_OPTIONS: "--max-old-space-size=4096"
       with:
         configurationFile: ${{ github.action_path }}/renovate-global.json

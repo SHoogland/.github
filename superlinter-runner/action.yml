@@ -1,29 +1,24 @@
-name: 'Run SuperLinter'
-description: 'Runs SuperLinter against the current repo'
+---
+name: "Run SuperLinter"
+description: "Runs SuperLinter against the current repo"
 runs:
-  using: 'composite'
-  steps:
-    - name: Checkout code
-      uses: actions/checkout@v7
-      with:
-        fetch-depth: 0
-        persist-credentials: false
+    using: "composite"
+    steps:
+        - name: Checkout code
+          uses: actions/checkout@v7
+          with:
+              fetch-depth: 0
+              persist-credentials: false
 
-    - name: Prepare actionlint config
-      shell: bash
-      run: |
-        pwd
-        ls
-        cp ${{ github.action_path }}/actionlint.yml actionlint.yml
-        cp ${{ github.action_path }}/.prettierrc.json .prettierrc.json
-        sudo mkdir -p /action/lib/.automation
-        sudo cp ${{ github.action_path }}/actionlint.yml /action/lib/.automation/actionlint.yml
-        sudo chmod 644 /action/lib/.automation/actionlint.yml
+        - name: Prepare lint config
+          shell: bash
+          run: |
+              cp ${{ github.action_path }}/.prettierrc.json .prettierrc.json
 
-    - name: Super-linter
-      uses: super-linter/super-linter/slim@v8.7.0
-      env:
-        GITHUB_TOKEN: ${{ github.token }}
-        VALIDATE_GITHUB_ACTIONS_ZIZMOR: false
-        VALIDATE_BIOME_LINT: false
-        VALIDATE_BIOME_FORMAT: false
+        - name: Super-linter
+          uses: super-linter/super-linter/slim@v8.7.0
+          env:
+              GITHUB_TOKEN: ${{ github.token }}
+              VALIDATE_GITHUB_ACTIONS_ZIZMOR: false
+              VALIDATE_BIOME_LINT: false
+              VALIDATE_BIOME_FORMAT: false
