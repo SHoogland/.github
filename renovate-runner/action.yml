@@ -6,7 +6,7 @@ runs:
   steps:
     - uses: actions/checkout@v7
     - name: Self-hosted Renovate
-      uses: renovatebot/github-action@v46.2.5
+      uses: renovatebot/github-action@v46.2.6
       env:
         RENOVATE_TOKEN: ${{ github.token }}
         RENOVATE_REPOSITORIES: ${{ github.repository }}
