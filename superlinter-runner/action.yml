@@ -14,6 +14,8 @@ runs:
       shell: bash
       run: |
         cp ${{ github.action_path }}/.prettierrc.json .prettierrc.json
+        mkdir -p .github/workflows/linters
+        cp ${{ github.action_path }}/actionlint.yml .github/workflows/linters/actionlint.yml
 
     - name: Super-linter
       uses: super-linter/super-linter/slim@v8.7.0
