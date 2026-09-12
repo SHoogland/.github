@@ -21,6 +21,5 @@ runs:
       uses: super-linter/super-linter/slim@4ce20838b8ab83717e78138c5b3a1407148e0918 # v8.7.0
       env:
         GITHUB_TOKEN: ${{ github.token }}
-        VALIDATE_GITHUB_ACTIONS_ZIZMOR: false
         VALIDATE_BIOME_LINT: false
         VALIDATE_BIOME_FORMAT: false
