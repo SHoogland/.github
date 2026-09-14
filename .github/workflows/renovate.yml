@@ -19,6 +19,7 @@ jobs:
       statuses: write
       issues: write
       checks: write
+      actions: write
       vulnerability-alerts: read
     steps:
       - uses: shoogland/.github/renovate-runner@main
