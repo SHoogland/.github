@@ -22,6 +22,12 @@
             "matchDepTypes": ["devDependencies"],
             "matchUpdateTypes": ["minor", "patch"],
             "automerge": true
+        },
+        {
+            "matchManagers": ["github-actions"],
+            "matchPackageNames": ["SHoogland/.github"],
+            "matchCurrentValue": "/^main$/",
+            "enabled": false
         }
     ]
 }
