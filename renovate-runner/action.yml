@@ -1,10 +1,21 @@
 ---
 name: "Run Renovate"
 description: "Runs Renovate against the current repo"
+inputs:
+  private-key:
+    required: true
+
 runs:
   using: "composite"
   steps:
+    - uses: actions/create-github-app-token@v3.2.0
+      id: app-token
+      with:
+        app-id: 2257917
+        private-key: ${{ inputs.private-key }}
+
     - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+
     - name: Self-hosted Renovate
       uses: renovatebot/github-action@c314dda4a9a93b08239ec978f2043b9a433b9ac4 # v46.3.0
       env:
@@ -13,3 +24,4 @@ runs:
         NODE_OPTIONS: "--max-old-space-size=4096"
       with:
         configurationFile: ${{ github.action_path }}/renovate-global.json
+        token: ${{ steps.app-token.outputs.token }}

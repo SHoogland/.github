@@ -19,4 +19,4 @@ jobs:
     steps:
       - uses: shoogland/.github/renovate-runner@main
         with:
-          private-key: ${{ secrets.RENOVATE_APP_PRIVATE_KEY }}
+          private-key: ${{ secrets.SH_UPDATER_APP_PRIVATE_KEY }}
