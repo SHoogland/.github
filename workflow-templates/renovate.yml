@@ -9,4 +9,4 @@ jobs:
   renovate:
     uses: shoogland/.github/.github/workflows/renovate.yml@main
     secrets:
-      RENOVATE_APP_PRIVATE_KEY: ${{ secrets.RENOVATE_APP_PRIVATE_KEY }}
+      SH_UPDATER_APP_PRIVATE_KEY: ${{ secrets.SH_UPDATER_APP_PRIVATE_KEY }}
