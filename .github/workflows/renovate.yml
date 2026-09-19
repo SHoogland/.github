@@ -5,6 +5,9 @@ on:
   schedule:
     - cron: "0 12 * * *"
   workflow_call:
+    secrets:
+      SH_UPDATER_APP_PRIVATE_KEY:
+        required: true
   workflow_dispatch:
 
 permissions: {}
@@ -13,13 +16,7 @@ jobs:
   renovate:
     runs-on: ubuntu-latest
     timeout-minutes: 15
-    permissions:
-      contents: write
-      pull-requests: write
-      statuses: write
-      issues: write
-      checks: write
-      actions: write
-      vulnerability-alerts: read
     steps:
       - uses: shoogland/.github/renovate-runner@main
+        with:
+          private-key: ${{ secrets.RENOVATE_APP_PRIVATE_KEY }}
