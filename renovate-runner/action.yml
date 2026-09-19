@@ -11,7 +11,7 @@ runs:
     - uses: actions/create-github-app-token@v3.2.0
       id: app-token
       with:
-        app-id: 2257917
+        client-id: 2257917
         private-key: ${{ inputs.private-key }}
 
     - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
