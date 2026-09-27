@@ -29,5 +29,10 @@
             "matchCurrentValue": "/^main$/",
             "enabled": false
         }
-    ]
+    ],
+    "lockFileMaintenance": {
+        "enabled": true,
+        "automerge": true,
+        "schedule": ["before 6pm on monday"]
+    }
 }
