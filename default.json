@@ -24,6 +24,11 @@
             "automerge": true
         },
         {
+            "matchManagers": ["npm"],
+            "matchUpdateTypes": ["patch"],
+            "automerge": true
+        },
+        {
             "matchManagers": ["github-actions"],
             "matchPackageNames": ["SHoogland/.github"],
             "matchCurrentValue": "/^main$/",
